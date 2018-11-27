@@ -140,7 +140,6 @@ void tcp_time_wait(struct sock *sk, int state, int timeo);
 						 * valid RTT sample has been acquired,
 						 * most likely due to retrans in 3WHS.
 						 */
-#define TCP_DELACK_SEG	1
 
 #define TCP_RESOURCE_PROBE_INTERVAL ((unsigned)(HZ/2U)) /* Maximal interval between probes
 					                 * for local resources.
@@ -320,9 +319,6 @@ extern unsigned long long sysctl_tcp_cltcp_ifdevs;
 extern atomic_long_t tcp_memory_allocated;
 extern struct percpu_counter tcp_sockets_allocated;
 extern int tcp_memory_pressure;
-
-extern int sysctl_tcp_delack_seg;
-extern int sysctl_tcp_use_userconfig;
 
 /* optimized version of sk_under_memory_pressure() for TCP sockets */
 static inline bool tcp_under_memory_pressure(const struct sock *sk)
